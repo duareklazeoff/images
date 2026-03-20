@@ -1,7 +1,15 @@
 name: Build images
 
-ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
+env:
+  ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
 
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * 2"
 on:
   push:
     branches:
